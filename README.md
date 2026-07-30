@@ -1,43 +1,43 @@
 # UniAttendance
 
-UniAttendance este o aplicație web pentru gestionarea și monitorizarea prezenței studenților la cursuri și evenimente universitare.
+UniAttendance is a web application for managing and monitoring student attendance at university courses and events.
 
-Profesorii pot crea cursuri și sesiuni de prezență, iar studenții își pot marca prezența prin scanarea unui cod QR dinamic. Codul QR se regenerează la fiecare trei secunde, pentru a reduce posibilitatea distribuirii acestuia către persoanele care nu se află în sală.
+Teachers can create courses and attendance sessions, while students can mark their attendance by scanning a dynamic QR code. The QR code is regenerated every three seconds to reduce the possibility of sharing it with people who are not physically present in the classroom.
 
-Proiectul a fost realizat ca proiect de diplomă în cadrul specializării Calculatoare.
+The project was developed as a bachelor's thesis within the Computer Engineering degree program.
 
-## Funcționalități
+## Features
 
-### Cadru didactic
+### Teacher
 
-- autentificare în aplicație;
-- creare, editare și ștergere a cursurilor;
-- generarea codurilor de înscriere pentru cursuri;
-- pornirea și închiderea sesiunilor de prezență;
-- generarea unui cod QR dinamic pentru fiecare sesiune;
-- vizualizarea prezențelor în timp real;
-- adăugarea manuală a unui student la sesiune;
-- anularea unei prezențe;
-- adăugarea de observații și puncte bonus.
+- authentication;
+- create, edit, and delete courses;
+- generate course enrollment codes;
+- start and close attendance sessions;
+- generate a dynamic QR code for each attendance session;
+- view attendance records in real time;
+- manually add a student to an attendance session;
+- cancel an attendance record;
+- add notes and bonus points.
 
 ### Student
 
-- autentificare în aplicație;
-- înscrierea la cursuri prin introducerea unui cod primit de la profesor;
-- scanarea codului QR pentru înregistrarea prezenței;
-- vizualizarea cursurilor la care este înscris;
-- vizualizarea participărilor la evenimente și activități suplimentare;
-- primirea unui mesaj de confirmare după înregistrarea prezenței.
+- authentication;
+- enroll in courses using a code provided by the teacher;
+- scan the QR code to register attendance;
+- view enrolled courses;
+- view participation in events and additional activities;
+- receive a confirmation message after attendance is registered.
 
-### Vizitator
+### Visitor
 
-- scanarea codului QR și completarea propriului nume pentru înregistrarea prezenței.
+- scan the QR code and enter their name to register attendance.
 
 ### Admin
 
-- gestionează conturile personale înregistrate pe platformă, care nu aparțin universității.
+- manage personal accounts registered on the platform that are not affiliated with the university.
 
-## Tehnologii utilizate
+## Technologies Used
 
 ### Frontend
 
@@ -52,44 +52,44 @@ Proiectul a fost realizat ca proiect de diplomă în cadrul specializării Calcu
 - WebSockets
 - Firebase Authentication
 
-### Bază de date
+### Database
 
 - PostgreSQL
 - Supabase
-- Docker pentru rularea locală
+- Docker for local development
 
-### Găzduire
+### Hosting
 
-- Vercel pentru frontend
-- Render pentru backend
-- Supabase pentru baza de date
+- Vercel for the frontend
+- Render for the backend
+- Supabase for the database
 
 ## Demo
 
-Aplicația este disponibilă online:
+The application is available online:
 
 - [UniAttendance](https://uniattendance.vercel.app/)
 - [Backend API](https://uniattendance.onrender.com/api)
 
-### Demo video
+### Demo Video
 
-- [Vizualizează demonstrația aplicației](<LINK_VIDEO>)
+- [Watch the application demo](<VIDEO_LINK>)
 
-## Cum funcționează
+## How It Works
 
-Profesorul creează un curs și generează un cod de înscriere pe care îl oferă studenților.
+The teacher creates a course and generates an enrollment code, which is then shared with the students.
 
-Pentru înregistrarea prezenței, profesorul pornește o sesiune. Aplicația afișează un cod QR care se regenerează automat la fiecare trei secunde.
+To register attendance, the teacher starts an attendance session. The application displays a QR code that is automatically regenerated every three seconds.
 
-Studentul deschide aplicația, pornește camera și scanează codul QR afișat. După validarea codului, prezența este înregistrată și apare în timp real în pagina profesorului.
+The student opens the application, activates the camera, and scans the displayed QR code. After the code is validated, the attendance record is created and appears in real time on the teacher's page.
 
-La finalul cursului, profesorul închide sesiunea, iar codul QR nu mai poate fi utilizat.
+At the end of the course, the teacher closes the attendance session, and the generated QR codes can no longer be used.
 
-## Rulare locală
+## Local Setup
 
-### Cerințe
+### Requirements
 
-Pentru rularea proiectului sunt necesare:
+The following tools are required to run the project locally:
 
 - Python
 - Node.js
@@ -97,81 +97,81 @@ Pentru rularea proiectului sunt necesare:
 - Docker
 - Git
 
-### 1. Clonarea repository-ului
+### 1. Clone the Repository
 
 ```bash
-git clone <URL_REPOSITORY>
+git clone <REPOSITORY_URL>
 cd uniattendance
 ```
 
-### 2. Configurarea variabilelor de mediu
+### 2. Configure Environment Variables
 
-Creează fișierele `.env` necesare în directoarele `frontend` și `backend`.
+Create the required `.env` files in the `frontend` and `backend` directories.
 
-Acestea trebuie să conțină datele de configurare pentru:
+These files must contain the configuration data for:
 
 - Firebase;
-- baza de date PostgreSQL;
-- serviciile externe utilizate de aplicație.
+- the PostgreSQL database;
+- the external services used by the application.
 
-Fișierele `.env` nu trebuie încărcate în repository.
+The `.env` files must not be committed to the repository.
 
-### 3. Pornirea bazei de date
+### 3. Start the Database
 
-Pentru rularea locală a bazei de date:
+To run the database locally:
 
 ```bash
 docker compose up -d
 ```
 
-### 4. Pornirea backend-ului
+### 4. Start the Backend
 
-Deschide un terminal și accesează directorul backend:
+Open a terminal and navigate to the backend directory:
 
 ```bash
 cd backend
 python -m venv venv
 ```
 
-Activarea mediului virtual pe Windows:
+Activate the virtual environment on Windows:
 
 ```bash
 venv\Scripts\activate
 ```
 
-Activarea mediului virtual pe Linux sau macOS:
+Activate the virtual environment on Linux or macOS:
 
 ```bash
 source venv/bin/activate
 ```
 
-Instalează dependențele:
+Install the dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Pornește serverul:
+Start the server:
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Backend-ul va fi disponibil, în mod normal, la adresa:
+The backend will normally be available at:
 
 ```text
 http://localhost:8000
 ```
 
-Documentația API poate fi accesată la:
+The API documentation can be accessed at:
 
 ```text
 http://localhost:8000/docs
 ```
 
-### 5. Pornirea frontend-ului
+### 5. Start the Frontend
 
-Deschide un alt terminal și accesează directorul frontend:
+Open another terminal and navigate to the frontend directory:
 
 ```bash
 cd frontend
@@ -179,13 +179,13 @@ npm install
 npm run dev
 ```
 
-Frontend-ul va fi disponibil, în mod normal, la adresa:
+The frontend will normally be available at:
 
 ```text
 http://localhost:5173
 ```
 
-## Structura proiectului
+## Project Structure
 
 ```text
 uniattendance/
@@ -195,16 +195,16 @@ uniattendance/
 └── README.md
 ```
 
-## Securitatea codurilor QR
+## QR Code Security
 
-Fiecare cod QR conține un token temporar asociat unei sesiuni active.
+Each QR code contains a temporary token associated with an active attendance session.
 
-Token-ul se schimbă la fiecare trei secunde. În cazul în care un cod expiră înainte de scanare, studentul poate menține camera îndreptată spre ecran pentru a scana următorul cod valid.
+The token changes every three seconds. If a code expires before it can be scanned, the student can keep the camera pointed at the screen to scan the next valid code.
 
-După închiderea sesiunii, codurile generate nu mai pot fi utilizate pentru înregistrarea unei prezențe.
+After the attendance session is closed, the generated codes can no longer be used to register attendance.
 
-## Autor
+## Author
 
 **Ionela-Valentina Dică**
 
-Proiect de diplomă realizat în cadrul specializării Calculatoare.
+Bachelor's thesis project developed within the Computer Engineering degree program.
