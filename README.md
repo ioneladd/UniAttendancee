@@ -73,7 +73,7 @@ The application is available online:
 
 ### Demo Video
 
-- [Watch the application demo](<VIDEO_LINK>)
+- [Watch the application demo](<https://youtu.be/QbEBdEzagX0>)
 
 ## How It Works
 
