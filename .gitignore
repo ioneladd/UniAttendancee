@@ -1,0 +1,32 @@
+# ========================
+# SECRETE SI API KEYS
+# ========================
+**/.env
+backend/*-firebase-adminsdk*.json
+*.pem
+
+# ========================
+# BACKEND (Python / FastAPI)
+# ========================
+backend/venv/
+**/__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# ========================
+# FRONTEND (Node.js / React)
+# ========================
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+.eslintcache
+npm-debug.log*
+
+# ========================
+# SISTEM DE OPERARE & EDITOR
+# ========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
