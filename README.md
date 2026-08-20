@@ -68,7 +68,7 @@ The project was developed as a bachelor's thesis within the Computer Engineering
 
 The application is available online:
 
-- [UniAttendance](https://uniattendance.vercel.app/)
+- [UniAttendance](https://uniattendance.vercel.app/) - Note: The live demo is currently paused because the Supabase database instance is inactive. As a result, the application cannot currently be demonstrated live. The project is not discontinued and can be restarted and redeployed upon request. A live demonstration can therefore be made available again if needed.
 - [Backend API](https://uniattendance.onrender.com/api)
 
 ### Demo Video
